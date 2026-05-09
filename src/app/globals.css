@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-green: #a6c516;
+  --brand-green-dark: #8fa813;
+  --brand-blue: #3b7dba;
+  --brand-blue-dark: #2c6396;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #fcfbf9;
+  color: #000;
+}
+
+::selection {
+  background-color: #a6c516;
+  color: #fff;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ── React-Slick custom dots ── */
+.slick-dots {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 0 !important;
+  margin: 20px 0 0 !important;
+  list-style: none !important;
+  bottom: auto !important;
+  position: relative !important;
+}
+
+.slick-dots li {
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.slick-dots li button {
+  width: 10px !important;
+  height: 10px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  background: #3b7dba !important;
+  opacity: 0.45 !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: block !important;
+  transition: width 0.3s ease, opacity 0.3s ease, background 0.3s ease !important;
+}
+
+/* hide default slick pseudo-element dot */
+.slick-dots li button::before {
+  display: none !important;
+  content: '' !important;
+}
+
+/* Active dot → pill shape, full opacity, brand green */
+.slick-dots li.slick-active button {
+  width: 28px !important;
+  opacity: 1 !important;
+  background: #a6c516 !important;
+}
