@@ -3,13 +3,14 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Loader, CheckCircle, User, Mail, Phone, MessageSquare, Stethoscope, MapPin, Clock } from "lucide-react";
+import { CheckCircle, User, Mail, Phone, MessageSquare, Stethoscope, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
 import { companyData } from "@/constants/siteData";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Select from "../ui/Select";
 import Button from "../ui/Button";
+import Image from "next/image";
 
 
 
@@ -65,7 +66,7 @@ const INFO_CARDS = [
 ];
 
 interface FieldProps {
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   label: string;
   error?: string;
   children: React.ReactNode;
@@ -110,7 +111,7 @@ export default function ContactSection() {
     },
   });
 
-  const onSubmit = async (values: any) => {
+  const onSubmit = async (values: {name:string, mobile:string, service:string, email:string, message:string}) => {
     try {
       setServerError(null);
       const ipRes = await fetch("https://api.ipify.org?format=json");
@@ -152,9 +153,11 @@ export default function ContactSection() {
     <>
       {/* ── Page Hero ── */}
       <div className="relative h-64 sm:h-80 bg-gray-900 overflow-hidden">
-        <img
+        <Image
           src="/assets/herobanner1.png"
           alt=""
+          width={1920}
+          height={1080}
           className="absolute inset-0 w-full h-full object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/60" />

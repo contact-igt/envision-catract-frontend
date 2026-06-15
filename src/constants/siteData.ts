@@ -25,7 +25,7 @@ export const heroContent = {
     "Home Same Day",
     "Glasses-Free Options",
   ],
-  formHeader: "Let’s get your eyes checked — it’s free.",
+  formHeader: "Let’s get your eyes checked.",
   formButton: "Request My Appointment",
   reassurance: "We’ll call you within 30 minutes to confirm. Your details stay private.",
 };
@@ -168,6 +168,12 @@ export const procedureData = {
     "Home the same day",
     "Clear vision next day",
   ],
+  highlights: [
+    "No stitches.",
+    "No overnight stay.",
+    "No eye patch for weeks.",
+    "In 30 minutes it's done",
+  ],
 };
 
 export const symptomsData = {
@@ -240,11 +246,11 @@ export const whyEnvisionData = {
 };
 
 export const doctorData = {
-  title: "In Safe Hands — Meet Dr. Vaishalli Sathe",
+  title: "Meet Dr. Vaishalli Sathe",
   description: "Every eye is different. Every life is different. That’s why Dr. Vaishalli doesn’t just perform cataract surgery — she listens first, plans carefully, and chooses the lens that fits how you actually live. Fellowship-trained at Moorfields Eye Hospital, London, she brings world-class expertise to warm, personalised care right here in Aundh.",
   credentials: [
     "MBBS + DNB (Ophthalmology)",
-    "Trained at World renowned institutes in India and Moorfields Eye Hospital, London (M.E.H.)",
+    "Dr Vaishalli Sathe got trained in LASIK/SMILE Surgery under a renowned LASIK Surgeon who is a pioneer of SMILE SURGERY in India",
     "Fellowship In Pediatric Ophthalmology and Squint Surgery",
     "So trusted with children’s eyes too",
     "Expert in Premium IOL selection & personalized cataract planning",
@@ -253,6 +259,20 @@ export const doctorData = {
     { value: "5,000+", label: "Surgeries Performed" },
     { value: "18+", label: "Years of Experience" },
     { value: "Trained at Renowned", label: "Institutes in India and London" },
+  ],
+  credentialsBadges: [
+    "Trained at renowned Institutes",
+    "India",
+    "London",
+  ],
+  specializationBadges: [
+    { icon: "Eye", label: "LASIK" },
+    { icon: "Eye", label: "Advanced Cataract Surgery" },
+    { icon: "Heart", label: "Personalised Eye Care" },
+  ],
+  highlights: [
+    "Trained at renowned Institutes in India and London,",
+    "advanced cataract surgery, LASIK, & personalised eye care.",
   ],
 };
 
@@ -336,6 +356,21 @@ export const testimonialsData = {
       name: "Priya Kulkarni",
       tag: "Cataract (Trifocal)  ·  Patient’s daughter",
       quote: "My mother is 72. We chose the trifocal lens on Dr. Vaishalli’s advice and she no longer needs glasses at all — distance, reading, phone. She keeps saying ‘I wish I’d done this five years ago.’",
+    },
+    {
+      name: "Madhura Pohekar",
+      tag: "Cataract Surgery  ·  Patient's daughter",
+      quote: "We've been visiting Dr. Vaishali Sathe for over 5 years now, and every single experience has been nothing short of outstanding. Recently, Dr. Sathe performed cataract surgery on my mother, and I am thrilled to share just how excellent the entire process was from start to finish.\n\nDr. Vaishali Sathe is a highly skilled and compassionate eye surgeon, and her expertise truly shines through. She took the time to thoroughly explain the procedure, answer all our questions, and ensure that my mom felt comfortable and at ease throughout the entire process. The surgery itself was flawless, and my mom's recovery has been smooth. Her vision has improved dramatically, and we couldn't be more grateful for the wonderful results.\n\nWhat makes this experience even more special is the incredible team that surrounds Dr. Sathe. Mangal, the receptionist, always greets us with a smile and handles all scheduling and inquiries with great efficiency. Her professionalism and warmth create an incredibly welcoming and reassuring environment.",
+    },
+    {
+      name: "Neha Kamat",
+      tag: "Cataract Surgery  ·  Google Review",
+      quote: "Both my parents underwent cataract surgery with Dr. Vaishali Sathe and the results are life-changing. From the initial consultation, the doctor took the time to explain the different lens options and what to expect during recovery. The procedure itself was quick and painless. The entire team at Envision clinic was professional and made the insurance process seamless. Highly recommend the doctor and all the services.",
+    },
+    {
+      name: "Anup Latnekar",
+      tag: "Cataract Surgery  ·  Google Review",
+      quote: "We first visited Dr. Vaishali Sathe to get my mother's eyes checked for cataract two years ago.\n\nDr. Sathe's diagnosis was accurate at each developmental stage of glaucoma leading to two highly successful cataract surgeries at the right time in each eye. The OPD in Aundh is on par with clinics in countries like US, UK etc. with state of the art equipment used for diagnosis and same goes for surgery OT.\n\nIt is a privilege as the doctor personally attends to patients' pre, and post surgery care, providing clear instructions herself without delegating certain tasks to staff. We observed this was not just for us but a uniform practice for all patients treated equally, genuinely and with respect.\n\nThe staff also is very well trained and professional. Both surgeries were performed very skillfully with no pain to my mother (being 86) or any complications during or after surgery. Both surgeries were managed very efficiently with a great deal of effort on Dr. Sathe's part.\n\nDr. Sathe's approach towards her patients is friendly, caring yet professional. We experienced her practice to be highly trustworthy, ethical and values based which is rare in today's medical arena.\n\nWe highly recommend Dr. Vaishali Sathe to anyone requiring eye care or cataract for consultation for an unmatched eye treatment and care in Pune. Thank you Envision for gifting my mother a new vision!",
     },
   ],
 };

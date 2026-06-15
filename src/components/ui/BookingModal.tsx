@@ -75,7 +75,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   if (!isOpen) return null;
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {name:string, phone:string, preferredTime:string, concern:string}) => {
     try {
       setLoading(true);
       setSubmitError("");

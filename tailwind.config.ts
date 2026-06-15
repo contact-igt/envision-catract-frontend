@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        mid: "992px",
+      },
       fontFamily: {
         sans: ["Nunito", "sans-serif"],
       },

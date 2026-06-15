@@ -60,12 +60,12 @@ export default function FaqSection({ onOpenModal }: FaqSectionProps) {
         <div className="mt-16 text-center">
           <button
             onClick={onOpenModal}
-            className="inline-flex items-center gap-3 bg-[#3b7dba] hover:bg-[#2c6396] text-white font-black px-12 py-4 rounded-full transition-all duration-200 shadow-xl hover:scale-105 active:scale-95 text-base lg:text-lg"
+            className="inline-flex items-center gap-3 bg-[#3b7dba] hover:bg-[#2c6396] text-white font-bold px-12 py-4 rounded-full transition-all duration-200 shadow-xl hover:scale-105 active:scale-95 text-sm lg:text-lg"
           >
-            Ready for Clearer Vision? Book Now <ArrowRight size={20} />
+            Ready for Clearer Vision? <br className="block mid:hidden" /> Book Now <ArrowRight size={20} />
           </button>
           <p className="mt-6 text-gray-500 font-bold italic text-sm">
-            Still have a question? Ask us directly on WhatsApp or during your free evaluation.
+            Still have a question? Ask us directly on WhatsApp or during your evaluation.
           </p>
         </div>
       </div>

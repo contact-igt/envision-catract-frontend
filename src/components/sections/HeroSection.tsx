@@ -5,12 +5,7 @@ import { CheckCircle, Phone, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Select from "@/components/ui/Select";
 import Input from "@/components/ui/Input";
-import { companyData, heroContent, formOptions, iolLenses } from "@/constants/siteData";
-
-interface HeroSectionProps {
-  onBookClick: () => void;
-}
-
+import { companyData, heroContent, formOptions } from "@/constants/siteData";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -28,7 +23,7 @@ const schema = yup.object().shape({
   concern: yup.string().required("Please select a concern."),
 });
 
-export default function HeroSection({ onBookClick }: HeroSectionProps) {
+export default function HeroSection() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -48,7 +43,7 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
     },
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {name:string, phone:string, preferredTime:string, concern:string}) => {
     try {
       setLoading(true);
       setSubmitError("");
@@ -209,7 +204,7 @@ export default function HeroSection({ onBookClick }: HeroSectionProps) {
                     variant="secondary"
                     loading={loading}
                     loadingText="Booking..."
-                    className="w-full py-3.5 sm:py-4 text-base sm:text-lg mt-4 shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
+                    className="w-full py-4 sm:py-4 text-sm sm:text-lg mt-4 shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
                   >
                     {heroContent.formButton} <ArrowRight size={20} className="ml-2" />
                   </Button>
