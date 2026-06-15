@@ -9,6 +9,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import DoctorSection from "@/components/sections/DoctorSection";
 import TreatmentSection from "@/components/sections/TreatmentSection";
 import WhyChooseSection from "@/components/sections/WhyChooseSection";
+import GallerySection from "@/components/sections/GallerySection";
 import FaqSection from "@/components/sections/FaqSection";
 import CtaSection from "@/components/sections/CtaSection";
 import Footer from "@/components/layout/Footer";
@@ -28,12 +29,14 @@ export default function Home() {
 
       {/* Page Sections */}
       <main>
-        <HeroSection onBookClick={openModal} />
+        <HeroSection />
         <SymptomsSection onOpenModal={openModal} />
         <TestimonialsSection />
         <DoctorSection />
         <TreatmentSection onOpenModal={openModal} />
+        {/* <ProcedureStepsSection onOpenModal={openModal} /> */}
         <WhyChooseSection onOpenModal={openModal} />
+        <GallerySection />
         <FaqSection onOpenModal={openModal} />
         <CtaSection />
         <Footer />

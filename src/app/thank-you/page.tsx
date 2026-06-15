@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import {
   CheckCircle,
   Phone,
@@ -16,6 +15,7 @@ import { companyData } from "@/constants/siteData";
 import Header from "@/components/layout/Header";
 import MobileStickyBar from "@/components/layout/MobileStickyBar";
 import Footer from "@/components/layout/Footer";
+import Image from "next/image";
 
 const NEXT_STEPS = [
   {
@@ -137,7 +137,7 @@ export default function ThankYouPage() {
                   What Happens Next?
                 </h2>
                 <p className="text-gray-500 font-medium text-lg">
-                  We've received your request. Here is how we'll proceed with your evaluation.
+                  We&apos;ve received your request. Here is how we&apos;ll proceed with your evaluation.
                 </p>
               </div>
 
@@ -181,9 +181,11 @@ export default function ThankYouPage() {
                   {!isPlaying ? (
                     <>
                       {/* Instagram Feed Image */}
-                      <img
+                      <Image
                         src="/assets/thankyou_video.jpg"
                         alt="Envision Eye Clinic Instagram Feed"
+                        width={400}
+                        height={500}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
 

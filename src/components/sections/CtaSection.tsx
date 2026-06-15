@@ -39,7 +39,7 @@ export default function CtaSection() {
     },
   });
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: {name:string, phone:string, preferredTime:string, concern:string}) => {
     try {
       setLoading(true);
       setSubmitError("");
@@ -132,7 +132,7 @@ export default function CtaSection() {
             {/* Lime top bar — exactly like Hero */}
             <div className="absolute top-0 left-0 w-full h-2 bg-[#a6c516]" />
 
-            <h2 className="text-2xl font-extrabold text-gray-800 mb-6 text-center leading-tight mt-2">
+            <h2 className="text-[clamp(17px,5.1vw,24px)] font-extrabold text-gray-800 mb-6 text-center leading-tight mt-2 whitespace-nowrap">
               {heroContent.formHeader}
             </h2>
 
@@ -172,9 +172,9 @@ export default function CtaSection() {
                 variant="secondary"
                 loading={loading}
                 loadingText="Booking..."
-                className="w-full py-4 text-lg mt-4 shadow-xl hover:scale-105 active:scale-95 transition-all duration-200"
+                className="w-full py-4 text-sm sm:text-lg mt-4 shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 whitespace-nowrap"
               >
-                {heroContent.formButton} <ArrowRight size={20} className="ml-2" />
+                {heroContent.formButton} <ArrowRight size={18} className="ml-2" />
               </Button>
 
               <p className="text-sm text-center text-gray-500 font-bold mt-4 flex items-start justify-center gap-1">

@@ -14,6 +14,9 @@ const QuoteIcon = () => (
   </svg>
 );
 
+// Threshold: approx chars that fit in 7 lines at card width
+const LONG_QUOTE_THRESHOLD = 300;
+
 export default function TestimonialsSection() {
   const sliderRef = useRef<Slider>(null);
 
@@ -47,7 +50,7 @@ export default function TestimonialsSection() {
   return (
     <section className="py-20 bg-[#f4f7f0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header — matching existing structure but updated with content */}
+        {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
             <h2 className="text-2xl md:text-4xl font-bold text-[#3b7dba] mb-2 leading-tight tracking-tight">
@@ -87,32 +90,61 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Slider — restored to original card layout */}
+        {/* Slider */}
         <div className="-mx-6 [&_.slick-track]:flex [&_.slick-track]:items-stretch [&_.slick-slide]:h-auto [&_.slick-slide>div]:h-full pb-10">
           <Slider ref={sliderRef} {...settings}>
-            {[...testimonialsData.items, ...testimonialsData.items].map((item, i) => (
-              <div key={i} className="px-6 h-full">
-                <div className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/40 border border-gray-50 relative flex flex-col h-full hover:border-[#a6c516]/30 transition-all duration-300" style={{ minHeight: "320px" }}>
-                  <div className="absolute top-8 right-8 opacity-20">
-                    <QuoteIcon />
-                  </div>
-                  <div className="flex text-[#a6c516] mb-6 gap-0.5">
-                    {[...Array(5)].map((_, j) => (
-                      <Star key={j} size={16} fill="currentColor" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-8 italic leading-relaxed z-10 relative text-base md:text-lg font-medium">
-                    &ldquo;{item.quote}&rdquo;
-                  </p>
-                  <div className="mt-auto pt-6 border-t border-gray-50">
-                    <h4 className="font-bold text-[#3b7dba] text-lg">{item.name}</h4>
-                    <p className="text-xs md:text-sm text-[#a6c516] font-bold mt-1 uppercase tracking-wider">
-                      {item.tag}
-                    </p>
+            {[...testimonialsData.items, ...testimonialsData.items].map((item, i) => {
+              const isLong = item.quote.length > LONG_QUOTE_THRESHOLD;
+              return (
+                <div key={i} className="px-6 h-full">
+                  <div
+                    className="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-gray-200/40 border border-gray-50 relative flex flex-col h-full hover:border-[#a6c516]/30 transition-all duration-300"
+                    style={{ minHeight: "320px" }}
+                  >
+                    <div className="absolute top-8 right-8 opacity-20">
+                      <QuoteIcon />
+                    </div>
+                    <div className="flex text-[#a6c516] mb-6 gap-0.5">
+                      {[...Array(5)].map((_, j) => (
+                        <Star key={j} size={16} fill="currentColor" />
+                      ))}
+                    </div>
+
+                    {/* Quote with hard CSS 7-line clamp */}
+                    <div className="mb-3 z-10 relative">
+                      <p
+                        className="text-gray-700 italic leading-relaxed text-base md:text-lg font-medium"
+                        style={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: 7,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
+                        &ldquo;{item.quote}&rdquo;
+                      </p>
+                      {isLong && (
+                        <a
+                          href={companyData.googleReviews}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#3b7dba] hover:underline font-semibold text-sm mt-1 inline-block not-italic"
+                        >
+                          ...read more
+                        </a>
+                      )}
+                    </div>
+
+                    <div className="mt-auto pt-6 border-t border-gray-50">
+                      <h4 className="font-bold text-[#3b7dba] text-lg">{item.name}</h4>
+                      <p className="text-xs md:text-sm text-[#a6c516] font-bold mt-1 uppercase tracking-wider">
+                        {item.tag}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </Slider>
         </div>
       </div>

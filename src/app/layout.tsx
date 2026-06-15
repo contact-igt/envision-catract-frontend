@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Envision Eye Clinic – Trusted Cataract Surgery in Pune",
   description:
-    "Get world-class cataract surgery at Envision Eye Clinic, Pune. Led by Dr. Vaishalli Sathe (M.E.H. London). Walk-in, walk-out same-day procedure. Book your free consultation today.",
+    "Get world-class cataract surgery at Envision Eye Clinic, Pune. Led by Dr. Vaishalli Sathe (M.E.H. London). Walk-in, walk-out same-day procedure. Book your consultation today.",
   keywords: [
     "cataract surgery pune",
     "cataract operation pune",
